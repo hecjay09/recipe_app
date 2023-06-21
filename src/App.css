@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+html {
+    font-family: Montserrat, sans-serif;
+}
+/*Form style start*/
+
+.ingrForm {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ingrForm label {
+    text-align: left;
+    display: block;
+}
+
+.ingrForm input,
+.ingrForm textarea {
+    width: 100%;
+    margin: 15px 0;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: block;
+    border-radius: 10px;
+}
+
+.ingrForm textarea {
+    height: 100px;
+}
+
+/*Form style end*/
+
+/*Header style start*/
+
+nav {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a, .close  {
+    text-decoration: none;
+    padding: 6px;
+    background-color: #a2f2f3;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .close:hover {
+    opacity: 1;
+}
+
+/*Header style end*/
+
+/*Recipe List style start*/
+
+.recipe-list {
+    position: fixed;
+}
+
+.recipelist-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-right: 25em;
+}
+
+.recipe-list h2 {
+    text-align: center;
+}
+
+.aRecipe {
+    margin: auto;
+
+}
+
+
+
+.aRecipe ul li {
+    list-style: none;
+    margin: 2em auto;
+    padding: 1.5em 20em 1.5em 2em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all .2s ease-in-out;
+}
+
+.aRecipe ul li:hover {
+    transform: scale(1.1);
+}
+
+.recipeLink {
+    text-decoration: none;
+    color: black;
+}
+
+/*Recipe List style end*/
+
+/*Modal style start*/
+
+.popup {
+    width: auto;
+    padding: 2em;
+    max-width: 700px;
+    position: relative;
+    margin: 3em auto;
+    z-index: 30;
+    background-color: #ffffe5;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-sizing: border-box;
+}
+
+.popup-content {
+    display: flex;
+    justify-content: center;
+}
+
+.close-div {
+    margin-left: 34em;
+}
+
+.bg {
+    z-index: 20;
+    margin-top: -33em;
+    position: fixed;
+    display: flex;
+}
+
+.bg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/*Modal style end*/
