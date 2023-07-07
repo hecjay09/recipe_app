@@ -1,32 +1,37 @@
-import React, { useEffect, useState} from "react";
-import uuid from 'react-uuid';
+import React, { useState } from "react";
 import "../App.css";
 
 function AddRecipe() {
+    //date
+    const date = new Date();
+    var today = date.toLocaleString("en-US");
     const [info, setInfo] = useState({
         recipeName: "",
         ingredients: "",
         directions: "",
-        id: uuid(),
+        lastModified: "",
     });
-    const items = JSON.parse(localStorage.getItem("formValues")) || [];
-    const [formValues, setFormValues] = useState(items || []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setInfo({ ...info, id : uuid()});
-        setFormValues((prev) => [...prev, info]);
+        setInfo({ ...info, lastModified: today });
+        try {
+            const response = await fetch("http://localhost:8080/recipes", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(info),
+            });
+            console.log(response);
+        } catch (err) {
+            console.error(err.message);
+        }
+        console.log(info);
         setInfo({
             recipeName: "",
             ingredients: "",
             directions: "",
-            id : uuid()
         });
     };
-
-  useEffect(() => {
-    localStorage.setItem("formValues", JSON.stringify(formValues));
-  }, [formValues]);
 
     return (
         <div>
@@ -60,7 +65,7 @@ function AddRecipe() {
                         setInfo({ ...info, directions: e.target.value })
                     }
                 ></textarea>
-                <button>Submit</button>
+                <button className="submit-btn">Submit</button>
             </form>
         </div>
     );

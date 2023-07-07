@@ -4,6 +4,7 @@ import AddRecipe from "./components/AddRecipe";
 import RecipeInfo from "./components/RecipeInfo";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import EditRecipe from "./components/EditRecipe";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/" element={<Home />}/>
                     <Route path="/add-recipe" element={<AddRecipe />}/>
                     <Route path="/recipes/:id" element={<RecipeInfo />}/>
+                    <Route path="/edit/:id" element={<EditRecipe />}/>
                 </Routes>
             </div>
         </HashRouter>
