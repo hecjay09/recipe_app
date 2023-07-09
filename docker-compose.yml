@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  server:
+    container_name: node-server
+    image: 'server'
+    build: 
+      context: .
+      dockerfile: ./server/Dockerfile
+    ports:
+      - '8080:8080'
+  app:
+    container_name: react-app
+    image: 'react'
+    build: .
+    ports:
+      - '3000:3000'
+  db:
+    image: 'postgres'
+    container_name: 'postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: '1643'
+      POSTGRES_DB: 'recipe'
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    volumes:
+      - ./db/db_data:/var/lib/postgresql/data

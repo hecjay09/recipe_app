@@ -16,8 +16,8 @@ html {
     display: block;
 }
 
-.ingrForm input,
-.ingrForm textarea {
+input,
+textarea {
     width: 100%;
     margin: 15px 0;
     padding: 6px 10px;
@@ -27,8 +27,9 @@ html {
     border-radius: 10px;
 }
 
-.ingrForm textarea {
+textarea {
     height: 100px;
+    resize: none;
 }
 
 /*Form style end*/
@@ -55,7 +56,8 @@ nav ul li {
     list-style: none;
 }
 
-nav ul li a, .close  {
+nav ul li a,
+.close {
     text-decoration: none;
     padding: 6px;
     background-color: #a2f2f3;
@@ -69,7 +71,8 @@ nav ul li a, .close  {
     transition: 0.3s;
 }
 
-nav ul li a:hover, .close:hover {
+nav ul li a:hover,
+.close:hover {
     opacity: 1;
 }
 
@@ -84,7 +87,6 @@ nav ul li a:hover, .close:hover {
 .recipelist-wrapper {
     display: flex;
     justify-content: center;
-    margin-right: 25em;
 }
 
 .recipe-list h2 {
@@ -93,17 +95,19 @@ nav ul li a:hover, .close:hover {
 
 .aRecipe {
     margin: auto;
-
 }
 
-
+.aRecipe ul {
+    display: flex;
+    justify-content: center;
+}
 
 .aRecipe ul li {
     list-style: none;
-    margin: 2em auto;
+    margin: 0em auto;
     padding: 1.5em 20em 1.5em 2em;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .aRecipe ul li:hover {
@@ -155,45 +159,71 @@ nav ul li a:hover, .close:hover {
 }
 
 button {
-  appearance: none;
-  background-color: #000000;
-  border: 2px solid #1A1A1A;
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0;
-  min-height: 60px;
-  min-width: 0;
-  outline: none;
-  padding: 16px 24px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 100%;
-  will-change: transform;
+    appearance: none;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
 }
 
 button:disabled {
-  pointer-events: none;
+    pointer-events: none;
 }
 
-button:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+button:hover,
+.editLink:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
 }
 
 .button-27:active {
-  box-shadow: none;
-  transform: translateY(0);
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.delete-btn {
+    background-color: #f80000;
+    padding-right: 1.5em;
+    padding-left: 1em;
+    margin: 0em 1em;
+}
+
+.submit-btn {
+    background-color: #000000;
+    padding: 16px 24px;
+    margin: 0;
 }
 
 /*Modal style end*/
+.editLink {
+    text-decoration: none;
+    background-color: #201dbf;
+    color: #e8d9d9;
+    font-weight: 900;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1.3em;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+}
+
+
